@@ -1,0 +1,47 @@
+		Name Verification
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Strings1 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+            Console.WriteLine("Enter the String names");
+            string name = Console.ReadLine();
+            
+            string[] names=name.Split(',');
+            
+            for(int i =0 ;i<names.Length;i++)
+            {
+                
+                string temp = names[i];
+                string tempName= temp.Replace(" ","");
+                int count=0;
+                for(int j=0;j<tempName.Length;j++)
+                {
+                    if(!Char.IsLetter(tempName[j]))
+                    {
+                        count++;
+                    }
+                    
+                }
+                if(count==0)
+                {
+                    Console.WriteLine(tempName +"==>" + "Verified");
+                }
+                else
+                {
+                    Console.WriteLine(tempName+"==>"+   "Invalid details");
+                }
+            }
+        }
+    }
+}
