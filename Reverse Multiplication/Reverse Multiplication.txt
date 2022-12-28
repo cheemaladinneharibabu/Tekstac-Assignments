@@ -1,0 +1,26 @@
+		Reverse Multiplication
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ForLoop //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+            Console.WriteLine("Enter the number");
+            int num=Convert.ToInt32(Console.ReadLine());
+            
+            for(int i=10;i>0;i--)
+            {
+                Console.WriteLine(num+" * "+i+" = "+num*i);
+            }
+        }
+    }
+}
