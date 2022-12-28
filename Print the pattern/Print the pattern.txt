@@ -1,0 +1,28 @@
+		Print the pattern
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DoWhile //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+          int i;
+          int j=1;
+          do{
+              i=1;
+              do{
+                 Console.WriteLine(j+ " " +i); 
+                 i++;
+                }while(i<3);
+                j++;
+          }while(j<6);
+          
+        }
+    }
+}
