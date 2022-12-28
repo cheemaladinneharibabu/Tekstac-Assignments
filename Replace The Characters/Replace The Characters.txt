@@ -1,0 +1,69 @@
+		Replace The Characters
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Strings2 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            bool test=true;
+            string s;
+             Console.WriteLine("Enter the string:");
+            s=Console.ReadLine();
+            char[] temp=new char[s.Length];
+            
+            for (int i=0;i<s.Length;i++)
+            {
+                temp[i]=s[i];
+            }
+            
+           for(int j=0;j<s.Length;j++)
+               {
+                  test= Char.IsLetter(s, j);
+                  if(test==false)
+                  break;
+               }
+               
+             
+            if(test)
+               {
+                  for(int i=0;i<temp.Length;i++)
+                  {
+                      if((i+1)%2!=0)
+                      {
+                      if(
+                          temp[i]>=65 && temp[i]<90 
+                        )
+                       temp[i]=(char)(temp[i]+1);
+                      else if(
+                          temp[i]>=97 && temp[i]<122
+                          )
+                       temp[i]=(char)(temp[i]+1);
+                      else if(
+                          temp[i]=='Z'
+                          )
+                       temp[i]='A';
+                      else if(
+                          temp[i]=='z'
+                          )
+                       temp[i]='a';
+                       
+                      }
+                  }
+                  string str = string.Concat(temp);
+                  Console.WriteLine(s+str);
+               }
+               else
+               {
+                   Console.WriteLine("Invalid input");
+               }
+        }
+    }
+}
