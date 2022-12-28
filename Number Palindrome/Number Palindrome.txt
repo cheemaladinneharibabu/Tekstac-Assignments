@@ -1,0 +1,36 @@
+		Number Palindrome
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PalindromeNumber  //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+       public static void Main(string[] args)  //DO NOT change the "Main" method signature
+       {
+             Console.WriteLine("Enter the number");
+             int a=Convert.ToInt32(Console.ReadLine());
+             
+    	    int r,sum=0,temp;
+    	    temp=a;
+    	    while(a>0)
+    	    {
+    	        r=a%10;
+    	        sum=(sum*10)+r;
+    	        a=a/10;
+    	    }
+    	    if(temp==sum)
+    	    {
+    	        Console.WriteLine("Palindrome");
+    	        
+    	    }
+    	    else
+    	        Console.WriteLine("number is not Palindrome");
+       }  
+    }
+} 
+
