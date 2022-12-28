@@ -1,0 +1,38 @@
+		Print Even Numbers from the given number
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProgFundamentals8               //DO NOT CHANGE the name of namespace
+{
+    public class Program                  //DO NOT CHANGE the name of class 'Program'
+    { 
+        public static void Main(string[] args)      //DO NOT CHANGE 'Main' Signature
+        {
+           Console.WriteLine("Enter starting number : ");
+           int num = Convert.ToInt32(Console.ReadLine());
+           
+           int count = 0;
+            int temp=num;
+           
+           while(count < 10)
+           {
+               if(temp % 2 == 0)
+               {
+                   Console.Write(temp+2+" ");
+                   temp+=2;
+                   count++;
+               }
+               else
+              {
+                   Console.Write(temp+1+" ");
+                   temp += 1;
+                   count++;
+               }
+           }
+        }
+    }
+}
