@@ -1,0 +1,38 @@
+		Application Form
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ApplicationForm //DO NOT change the namespace name
+{
+	public class Program //DO NOT change the class name
+	{
+		public static void Main(string[] args) //DO NOT change the 'Main' method signature
+		{
+		    string s = "Kenndey";
+		    int a = 25;
+		    string b = "ME";
+		    double c = 89.50;
+		    
+		    
+		    Console.WriteLine($"Enter name: {s} ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine($"Enter age:{a} ");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            //Console.WriteLine($"Enter qualification:{b} ");
+            //string qualification = Console.ReadLine();
+        
+
+            Console.WriteLine($"Enter PG/UG percentage:{c} ");
+            float percentage = Single.Parse(Console.ReadLine());
+
+            Console.WriteLine("I am " + name+" "+ age + " years old. I have completed "+ qualification +  " with " + percentage+" percentage.");
+
+		}
+	}
+}
