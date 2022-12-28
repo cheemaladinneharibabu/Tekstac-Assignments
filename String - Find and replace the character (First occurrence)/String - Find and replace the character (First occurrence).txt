@@ -1,0 +1,49 @@
+	String - Find and replace the character (First occurrence)
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CharacterReplacing //DO NOT change the namespace name
+{
+    public class Program
+    {
+     public static void Main(string[] args)
+     {
+        Console.WriteLine("Enter the String");
+        string str = Console.ReadLine();
+        Console.WriteLine("Enter the char to search");
+        char search =Convert.ToChar( Console.ReadLine());
+        
+        Console.WriteLine("Enter the char to replace");
+        char replace =Convert.ToChar( Console.ReadLine());
+        int count=0;
+        char[] words = str.ToCharArray();
+        
+        for(int i=0;i<str.Length;i++)
+        {
+            char ch = str[i];
+            if(ch==search)
+            {
+                words[i]=replace;
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        {
+            Console.WriteLine("Char is not Found");
+        }
+         else
+         {
+             foreach(char i in words)
+             {
+                 Console.Write(i);
+             }
+         }
+     }
+   }
+}
