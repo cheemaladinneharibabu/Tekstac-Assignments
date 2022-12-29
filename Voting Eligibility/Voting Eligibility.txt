@@ -1,0 +1,30 @@
+		Voting Eligibility
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exception2 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+           int vote_age;
+
+    Console.Write("Enter the age::\n ");
+    vote_age= Convert.ToInt32(Console.ReadLine());
+  if (vote_age<18)
+     {
+       Console.Write("Voting is not eligible\n");
+       
+     }
+  else
+     Console.Write("Voting is eligible.\n\n");
+        }
+    }
+}
