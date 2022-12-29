@@ -1,0 +1,105 @@
+
+	Automatic Teller Machine
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AutomaticTellerMachine //DO NOT CHANGE the namespace name
+{
+    public class Program //DO NOT CHANGE the class name 
+    {
+    
+        static Program programobj = new Program();
+
+        //Declare the Properties and methods here
+        
+        public string AccountNumber{get;set;}
+        public string AccountName{get;set;}
+        public double Balance{get;set;}
+        
+        public string RegisterAccount(string accountNumber,string accountName,double balance)
+        {
+            programobj.AccountNumber=accountName;
+            programobj.AccountName=accountName;
+            programobj.Balance = balance;
+            if(programobj!= null)
+            {
+                return "Account registered";
+            }
+            return "Unble to register";
+        }
+        public double DepositCash(Program programobj,double cash)
+        {
+            programobj.Balance=programobj.Balance + cash;
+            return  programobj.Balance;
+        }
+        public double WithDrawCash(Program programobj,double cash)
+        {
+            if(programobj.Balance > cash)
+            {
+               return programobj.Balance - cash;
+            }
+            else
+            {
+                Console.WriteLine("Insiffent Balance");
+            }
+            return programobj.Balance;
+
+        }
+        
+        public static void Main(string[] args)       //DO NOT CHANGE the 'Main' method signature
+        {
+            //Implement the code here
+            while(true)
+            {
+                Console.WriteLine("1.Register new account");
+                Console.WriteLine("2.Deposit cash");
+                Console.WriteLine("3.Withdraw cash");
+                Console.WriteLine("4.Exit");
+
+                Console.WriteLine("Enter your choice");
+                int ch = Convert.ToInt32(Console.ReadLine());
+                switch(ch)
+                {
+                    case 1:
+                    {
+                        Console.WriteLine("Enter the Account Number");
+                        string accountName =Console.ReadLine();
+                        Console.WriteLine("Enter the Account Name");
+                        string accountNumber = Console.ReadLine();
+                        Console.WriteLine("Enter the balance");
+                        double balance = double.Parse(Console.ReadLine());
+                        string Result = programobj.RegisterAccount(accountNumber,accountName,balance);
+                        Console.WriteLine("Account status :"+Result);
+                        break;
+                        
+                    }
+                    case 2:
+                    {
+                        Console.WriteLine("Enter the cash you want to deposite");
+                        double cash = double.Parse(Console.ReadLine());
+                        double Deposit=programobj.DepositCash(programobj,cash);
+                        Console.WriteLine("Current balance: "+ Deposit);
+                        break;
+                    }
+                    case 3:
+                    {
+                        Console.WriteLine("Enter the cash you want to withdraw");
+                        double cash = double.Parse(Console.ReadLine());
+                        double WithDraw=programobj.WithDrawCash(programobj,cash);
+                        Console.WriteLine("Current balance: "+WithDraw);
+                        break;
+                    }
+                    case 4:
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+	
+    }
+}
