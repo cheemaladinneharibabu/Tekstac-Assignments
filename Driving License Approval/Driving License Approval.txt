@@ -1,0 +1,74 @@
+	Driving License Approval
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace store_value_in_array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+ 
+
+
+            int Sum=0;
+            int Count=0;
+            Console.Write("\nEnter array length:\t");
+            int i = Convert.ToInt32(Console.ReadLine());
+            string[] arr = new string[i]; 
+            // Accepting value from user 
+            for (i = 0; i < arr.Length; i++)
+            {
+                Console.Write("\nEnter your string:\t");
+                //Storing value in an array
+                arr[i] = Console.ReadLine();
+            }
+            Console.WriteLine("\n\n");
+            for(i=0;i<arr.Length;i++)
+            {
+                if(!String.IsNullOrWhiteSpace(arr[i]))
+                {
+                    arr[i]=Regex.Replace( arr[i], @" ", "" );
+
+ 
+
+                }
+
+ 
+
+            }
+            //Printing the value on console
+            for( i=0;i<arr.Length;i++)
+            { 
+                bool test=true;
+                for(int j=0;j<arr[i].Length;j++)
+               {
+                  test= Char.IsLetter(arr[i], j);
+                  if(test==false)
+                  break;
+               }
+               if(test)
+               {
+                  // Console.WriteLine(arr[i]+" => Verified");
+                   Sum++;
+
+               }
+               else
+               {
+                 //  Console.WriteLine(arr[i]+" => Invalid details");
+                   Count++;
+               }
+            }
+             Console.WriteLine("Verified : " + Sum);
+             Console.WriteLine("Invalid : " + Count);
+
+            Console.ReadLine();
+        }
+    }
+}
