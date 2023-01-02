@@ -1,0 +1,60 @@
+		Calculate Area Of Shapes
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MethodOverloading //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+            
+            Console.WriteLine("1. Calculate area of rectangle");
+            Console.WriteLine("2. Calculate area of square");
+            Console.WriteLine("3.Calculate area of triangle");
+            
+            Console.WriteLine("Enter your chioce");
+            int ch = Convert.ToInt32(Console.ReadLine());
+            Shapes sh = new Shapes();
+            switch(ch)
+            {
+                case 1:
+                {
+                    Console.WriteLine("Enter the length");
+                    int length =Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter the breath");
+                    int breath =Convert.ToInt32(Console.ReadLine());
+                    int OutPut = sh.CalculateArea(length,breath);
+                    Console.WriteLine(OutPut);
+                    break;
+                }
+                 case 2:
+                    {
+                        Console.WriteLine("Enter the length");
+                        int length = Convert.ToInt32(Console.ReadLine());
+                        
+                        double OutPut = sh.CalculateArea(length);
+                        Console.WriteLine(OutPut);
+                        break;
+                    }	 	  	  		    	  	   	    	 	
+                case 3:
+                    {
+                        Console.WriteLine("Enter the length");
+                        float length =float.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter the breadth");
+                        float height = float.Parse(Console.ReadLine());
+
+                        float OutPut = sh.CalculateArea(length, height);
+                        Console.WriteLine(OutPut);
+                        break;
+                    }
+
+            }
+        }
+    }
+}
