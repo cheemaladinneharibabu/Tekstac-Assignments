@@ -1,0 +1,42 @@
+	Option Trading Details
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OptionTradingDetails //DO NOT change the namespace name
+{
+	public class Program //DO NOT change the class name
+	{
+	    public OptionDetails GetDetails(String optionDetails) //DO NOT change the method signature
+        {
+            OptionDetails result  = new OptionDetails();
+            string[] split = optionDetails.Split(':');
+            result.StockExchange = split[0];
+            result.OptionName = split[1];
+            result.ExpiryDate = split[2];
+            result.StrikeRate = Convert.ToInt32(split[3]);
+            result.Option = split[4];
+            
+            return result;
+
+
+
+		}
+		public static void Main(string[] args) //DO NOT change the 'Main' method signature
+		{
+		    Program programobj = new Program();
+            Console.WriteLine("Enter the option order");
+            string optionDetails = Console.ReadLine();
+
+            OptionDetails result = programobj.GetDetails(optionDetails);
+            Console.WriteLine("StockExchange: " + result.StockExchange);
+            Console.WriteLine("OptionName: " + result.OptionName);
+            Console.WriteLine("ExpiryDate: " + result.ExpiryDate);
+            Console.WriteLine("StrikeRate: " + result.StrikeRate);
+            Console.WriteLine("Option: " + result.Option);
+		}
+	}
+}
