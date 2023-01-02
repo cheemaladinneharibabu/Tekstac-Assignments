@@ -1,0 +1,40 @@
+	Array Multiplication
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Array_2 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+            Console.WriteLine("Enter the first number");
+            int num1= Convert.ToInt32(Console.ReadLine());
+             Console.WriteLine("Enter the second number");
+            int num2= Convert.ToInt32(Console.ReadLine());
+            int sum=0;
+             int hi=num1.ToString().Length;
+             int hello = num2.ToString().Length;
+             if(hello==hi)
+             {
+                 while(num1>0&&num2>0)
+                 {
+                     sum=sum+((num1%10)*(num2%10));
+                     num1=num1/10;
+                     num2=num2/10;
+                 }
+                 Console.WriteLine($"{sum}");
+             }
+             else
+             {
+                 Console.WriteLine("Invalid inputs");
+             }
+        }
+           
+    }
+}
