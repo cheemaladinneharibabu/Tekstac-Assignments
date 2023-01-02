@@ -1,0 +1,30 @@
+		Area of Shapes
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOPS2 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+            Triangle TriangleObj = new Triangle();
+            
+            Console.WriteLine("Enter the parameter1");
+             TriangleObj.Parameter1 = double.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Enter the parameter2");
+            TriangleObj.Parameter2 = double.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Area of triangle :" + TriangleObj.AreaOfTriangle());
+            Console.WriteLine("Area of triangle :" + TriangleObj.AreaOfRectangle());
+
+            
+        }
+    }
+}
