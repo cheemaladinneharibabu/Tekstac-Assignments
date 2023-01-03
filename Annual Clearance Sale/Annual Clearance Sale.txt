@@ -1,0 +1,48 @@
+	Annual Clearance Sale
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AnnualClearanceSale    //DO NOT CHANGE THE NAMESPACE NAME
+{
+    public class Program   //DO NOT CHANGE THE CLASS NAME
+    {
+        //declare the Delegate here
+        public delegate double MyDelegare();
+        //declare the Event here
+        public static event MyDelegare DeleEvent=null;
+        //declare the double here
+        public static double amount=0;
+        static void Main(string[] args)
+        {
+            //Implement your code here
+          Console.WriteLine("Enter the Amount");
+          amount=Convert.ToDouble(Console.ReadLine());
+          CreateEvent();
+          double amt=DeleEvent.Invoke();
+          Console.WriteLine("Discount Amount:"+amt);
+            
+        }
+        
+        public static void CreateEvent()
+        {
+            //Implement your code here
+            DeleEvent+=new MyDelegare(Calculation);
+        }
+        
+        public static double Calculation()
+        {
+            //Implement your code here
+            if(amount<75000)
+            {	 	  	  		    	  	   	    	 	
+                return amount-(0.07*amount);
+            }
+            else{
+                return amount-(0.12*amount);
+            }
+        }
+    }
+}
