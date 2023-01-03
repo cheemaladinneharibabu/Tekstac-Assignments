@@ -1,0 +1,90 @@
+	Attendance Management
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace Array_List //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+       public static ArrayList Attendance = new ArrayList()
+        {
+            "John",
+            "Peter",
+            "Jacob",
+            "Archie",
+            "Sophie",
+            "Veronica",
+            "Elizabeth",
+            "Charles"
+        };
+        
+        //Implement the methods here
+        public bool RemoveStudent(String name)
+        {
+            for (int i = 0; i < Attendance.Count; i++)
+            {
+                if (Attendance[i].Equals(name))
+                {
+                    Attendance.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+            //Attendance.Remove(name);
+        }
+        
+        public void SortTheAttendance()
+        {
+            Attendance.Sort();
+        }
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+             Program programObj = new Program();
+
+
+            while(true)
+            {
+            Console.WriteLine("1. Remove students");
+            Console.WriteLine("2. Sort students");
+            Console.WriteLine("Enter your choice");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    {
+                        Console.WriteLine("Enter the name:");
+                        String name = Console.ReadLine();
+                        programObj.RemoveStudent(name);
+                        // bool result = programObj.RemoveStudent(name);
+                        // if (result == true)
+                        // {
+                        //     Console.WriteLine("Removed successfully");
+                        // }
+                        // else
+                        // {
+                        //     Console.WriteLine("Not removed");
+                        // }
+                        break;
+                    }
+                case 2:
+                    {
+                        programObj.SortTheAttendance();
+                        for (int i = 0; i < Attendance.Count; i++)
+                        {
+                            Console.WriteLine(Attendance[i]);
+                        }
+                        break;
+                    }
+            }
+            }
+        }
+    }
+}
