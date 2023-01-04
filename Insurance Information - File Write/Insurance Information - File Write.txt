@@ -1,0 +1,55 @@
+	Insurance Information - File Write
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace InsuranceInformation //DO NOT change the namespace name
+{
+	public class Program //DO NOT change the class name
+	{
+		public static void Main(string[] args) //DO NOT change the 'Main' method signature
+		{
+		    //Implement your code here
+		    Console.WriteLine("Enter the Insurance number : ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the insurance holder name : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter the Policy name : ");
+            string policy = Console.ReadLine();
+
+            Console.WriteLine("Enter the insurance amount : ");
+            int amount = Convert.ToInt32(Console.ReadLine());
+
+            try
+            {
+                using(System.IO.StreamWriter file = new System.IO.StreamWriter(@"insurance.txt"))
+                {
+                    file.Write(number);
+                    file.Write("-");
+                    file.Write(name);
+                    file.Write("-");
+                    file.Write(policy);
+                    file.Write("-");
+                    file.Write(amount);
+                }	 	  	  		    	  	   	    	 	
+                //StreamReader f = new StreamReader(@"insurance.txt");
+                //Console.WriteLine(f.ReadToEnd());
+
+                Console.WriteLine("Insurance infrmation added to file successfully");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            Console.ReadLine();
+		}
+		
+	}
+}
