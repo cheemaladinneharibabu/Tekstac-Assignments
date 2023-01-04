@@ -1,0 +1,95 @@
+	Library Management
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dictionary_1 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static Dictionary<int, String> Library = new Dictionary<int, String>();
+        
+        //Implement the methods here
+        public bool AddToDictionary(int bookId, String bookTitle)
+        {
+            Library.Add(bookId, bookTitle);
+            foreach (KeyValuePair<int,String> kvp in Library)
+            {
+                if (kvp.Key == bookId)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        public Dictionary<int, String> GetBookById(int bookId)
+        {
+            Dictionary<int, String> result = new Dictionary<int, String>();
+            foreach (KeyValuePair<int, String> kvp in Library)
+            {
+                if (kvp.Key == bookId)
+                {
+                    result.Add(kvp.Key, kvp.Value);
+                }
+            }
+            Console.WriteLine(result);
+            return result;
+        }
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+            Program programObj = new Program();
+            
+            Console.WriteLine("1.Add to the dictionary");
+            Console.WriteLine("2.Get from the dictionary");
+            Console.WriteLine("Enter your choice");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    {
+                        Console.WriteLine("Enter book id:");
+                        int bookId = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter book title:");
+                        String bookTitle = Console.ReadLine();
+                        
+                        bool result = programObj.AddToDictionary(bookId,bookTitle);
+                        if (result == true)
+                        {
+                            Console.WriteLine("Added successfully");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Not added");
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        Console.WriteLine("Enter book id:");
+                        int bookId = Convert.ToInt32(Console.ReadLine());
+
+                        Dictionary<int,String> result = programObj.GetBookById(bookId);
+                        if (result.Count > 1)
+                        {
+                            foreach (KeyValuePair<int, String> kvp in result)
+                            {
+                                Console.WriteLine(kvp.Key + " " + kvp.Value);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Not found");
+                        }
+                        break;
+                    }
+            }
+        }
+    }
+}
